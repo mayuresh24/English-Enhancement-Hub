@@ -1,1 +1,105 @@
+body {
+  background: #f2f5f9;
+  font-family: "Segoe UI", sans-serif;
+}
 
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.calendar-weekdays,
+.calendar-days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+}
+
+.calendar-weekdays div {
+  text-align: center;
+  font-weight: 600;
+  opacity: 0.6;
+}
+
+.calendar-day {
+  background: white;
+  padding: 16px;
+  border-radius: 12px;
+  cursor: pointer;
+  position: relative;
+  transition: 0.25s;
+}
+
+.calendar-day:hover {
+  background: #0d6efd;
+  color: white;
+}
+
+.today {
+  border: 2px solid #0d6efd;
+}
+
+.has-content {
+  background: #e7f1ff;
+}
+
+.completed {
+  background: #198754 !important;
+  color: white;
+}
+
+.icons {
+  position: absolute;
+  bottom: 6px;
+  right: 6px;
+  font-size: 14px;
+}
+
+.empty {
+  visibility: hidden;
+}
+
+.content-box {
+  background: white;
+  padding: 18px;
+  border-radius: 14px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.stat-card {
+  background: white;
+  padding: 15px;
+  border-radius: 14px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+.timeline {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.timeline-dot {
+  width: 14px;
+  height: 14px;
+  background: #0d6efd;
+  border-radius: 50%;
+}
+
+.dark {
+  background: #121212;
+  color: #eaeaea;
+}
+
+.dark .calendar-day,
+.dark .content-box,
+.dark .stat-card {
+  background: #1e1e1e;
+  color: #eaeaea;
+}
+
+.dark .timeline-dot {
+  background: #20c997;
+}
