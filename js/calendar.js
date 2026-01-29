@@ -1,10 +1,12 @@
 let englishContent = [];
-fetch("js/data.json")
-  .then(res => res.json())
-  .then(data => {
-    englishContent = data;
-    renderCalendar();
-  });
+fetch("js/data.json?nocache=" + Date.now(), {
+  cache: "no-store"
+})
+.then(res => res.json())
+.then(data => {
+  englishContent = data;
+  renderCalendar();
+});
 
 const calendarDays = document.getElementById("calendarDays");
 const monthYear = document.getElementById("monthYear");
